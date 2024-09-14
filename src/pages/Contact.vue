@@ -10,7 +10,7 @@ const bottomMargins = computed(() => (isMobile ? 'mb-4' : ''))
 
 <template>
   <div>
-    <CoverImage :images="[location]" class="mb-8" />
+    <CoverImage :images="[location]" class="mb-4" />
     <div class="d-flex" :class="classes">
       <div :class="bottomMargins">
         <h2 class="mb-2">Bureau</h2>
