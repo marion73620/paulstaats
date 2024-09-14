@@ -12,7 +12,7 @@ const dialog = ref(false)
       <v-row>
         <v-col v-for="i in 12" :key="i" cols="12" md="3">
           <ProjectCard
-            title="Inspiratie jaja"
+            title="Under construction"
             imageFolder="inspiration"
             image="0-BPVelpNoord.png"
             @click="() => (dialog = true)"

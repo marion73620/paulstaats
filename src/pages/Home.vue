@@ -11,6 +11,7 @@ import { isMobile } from '@/composables/isMobile'
 <template>
   <div>
     <CoverImage
+      title="Website under construction"
       :images="[dekkerswald, velp, snelfietsroute, terwolde, inrichtingsplan]"
       :class="isMobile ? 'mb-2' : ''"
     />
