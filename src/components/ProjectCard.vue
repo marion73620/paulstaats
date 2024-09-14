@@ -22,7 +22,7 @@ defineProps({
           {{ title }}
         </v-card-title>
         <v-overlay
-          :modelValue="isHovering"
+          :v-model="isHovering"
           contained
           scrim="transparent"
           class="align-center justify-center"
