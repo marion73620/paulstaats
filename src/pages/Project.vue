@@ -19,7 +19,7 @@ const marginBottom = 'mb-6'
 const marginFooter = isMobile ? 'mx-2' : ''
 
 const projectIndex = computed(() =>
-  projects.findIndex((project) => project.title === props.projectName)
+  projects.findIndex((project) => project.urlTitle === props.projectName)
 )
 const project = computed(() => projects[projectIndex.value])
 
@@ -28,10 +28,10 @@ const { width, height } = useElementSize(imageRef)
 
 const flipBookImagesUrl = computed(() =>
   project.value?.flipbookImages?.map((image: string) =>
-    getImageUrl(image, `work/${project.value.title}`)
+    getImageUrl(image, `work/${project.value.urlTitle}`)
   )
 )
-const coverImageUrl = getImageUrl(project.value?.coverImage, `work/${project.value.title}`)
+const coverImageUrl = getImageUrl(project.value?.coverImage, `work/${project.value.urlTitle}`)
 
 const videoWidth = isMobile ? window.innerWidth - 40 : 800
 const videoHeight = isMobile ? videoWidth * 0.56 : 450
@@ -59,7 +59,7 @@ onUpdated(() => window.scrollTo(0, 0))
       <template #image>
         <div>
           <v-row :class="marginBottom"
-            ><v-img ref="imageRef" :src="getImageUrl(project?.image, `work/${project.title}`)"
+            ><v-img ref="imageRef" :src="getImageUrl(project?.image, `work/${project.urlTitle}`)"
           /></v-row>
           <v-row v-if="project?.video" :class="marginBottom"
             ><video :width="videoWidth" :height="videoHeight" controls>

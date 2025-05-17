@@ -12,13 +12,13 @@ const props = defineProps({
 
 const goToPreviousProject = () => {
   const prevName =
-    props.index === 0 ? projects[projects.length - 1].title : projects[props.index - 1].title
+    props.index === 0 ? projects[projects.length - 1].urlTitle : projects[props.index - 1].urlTitle
   router.push({ name: Routes.Project, params: { projectName: prevName } })
 }
 
 const goToNextProject = () => {
   const nextName =
-    props.index === projects.length - 1 ? projects[0].title : projects[props.index + 1].title
+    props.index === projects.length - 1 ? projects[0].urlTitle : projects[props.index + 1].urlTitle
   router.push({ name: Routes.Project, params: { projectName: nextName } })
 }
 

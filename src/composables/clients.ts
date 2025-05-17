@@ -30,7 +30,7 @@ export const clients: Client[] = [
   },
   {
     location: 'Particulier',
-    description: 'Inrichtingsplan, bestemmingsplan en advisering Landgoed Huis te Lathum, Zevenaar'
+    description: 'Inrichtingsplan, bestemmingsplan en advisering landgoed-huis-te-lathum, Zevenaar'
   },
   {
     location: 'Gezondheidscentrum Hazenkamp',
@@ -118,7 +118,7 @@ export const clients: Client[] = [
   },
   {
     location: 'Stichting Huis Deelerwoud',
-    description: 'Toekomstvisie Landgoed Deelerwoud en locatiestudie te Hoenderloo, Apeldoorn'
+    description: 'Toekomstvisie landgoed-deelerwoud en locatiestudie te Hoenderloo, Apeldoorn'
   },
   {
     location: 'Architect Berenbroek',
@@ -151,7 +151,7 @@ export const clients: Client[] = [
   },
   {
     location: 'Loenderslootgroep',
-    description: 'Inpassing Doorfietsroute F28 Amersfoort-Utrecht'
+    description: 'Inpassing doorfietsroute-f28 Amersfoort-Utrecht'
   },
   {
     location: 'Gemeente Lingewaard',

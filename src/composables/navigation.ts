@@ -7,13 +7,13 @@ import Partners from '@/components/profile/Partners.vue'
 import ProfileComp from '@/components/profile/ProfileComp.vue'
 
 export type Navigation = {
-  title: string | WorkTypes
+  title: string | WorkType
   to?: Routes
   component?: Component
   subNav?: Navigation[]
 }
 
-export enum WorkTypes {
+export enum WorkType {
   ALL = 'ALLES',
   URBANISM = 'STEDEBOUW',
   PLANNING = 'PLANOLOGIE',
@@ -23,19 +23,19 @@ export enum WorkTypes {
 
 export const workNav: Navigation[] = [
   {
-    title: WorkTypes.ALL
+    title: WorkType.ALL
   },
   {
-    title: WorkTypes.URBANISM
+    title: WorkType.URBANISM
   },
   {
-    title: WorkTypes.PLANNING
+    title: WorkType.PLANNING
   },
   {
-    title: WorkTypes.OUTSIDE
+    title: WorkType.OUTSIDE
   },
   {
-    title: WorkTypes.SAME
+    title: WorkType.SAME
   }
 ]
 

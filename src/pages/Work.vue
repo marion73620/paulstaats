@@ -2,7 +2,7 @@
 import type { PropType } from 'vue'
 import { ref } from 'vue'
 import ProjectCard from '@/components/ProjectCard.vue'
-import { workNav, WorkTypes } from '@/composables/navigation'
+import { workNav, WorkType } from '@/composables/navigation'
 import router from '@/router'
 import { Routes } from '@/router/routes'
 import type { Project } from '@/composables/projects'
@@ -10,19 +10,23 @@ import { projects } from '@/composables/projects'
 import { isMobile } from '@/composables/isMobile'
 
 const props = defineProps({
-  content: { type: Object as PropType<WorkTypes> }
+  content: { type: Object as PropType<WorkType> }
 })
 
 const tab = ref(null)
 
-const activeProjects = (workType: WorkTypes) =>
+const activeProjects = (workType: WorkType) =>
   props.content
-    ? props.content === WorkTypes.ALL
+    ? props.content === WorkType.ALL
       ? projects
       : projects.filter((project: Project) => project.type.includes(props.content!))
-    : workType === WorkTypes.ALL
+    : workType === WorkType.ALL
       ? projects
       : projects.filter((project: Project) => project.type.includes(workType))
+
+const getProjectImage = (project: Project) => {
+  return project.image ? project.image : project.flipbookImages?.[0] ? project.flipbookImages[0] : ''
+}
 </script>
 
 <template>
@@ -35,20 +39,20 @@ const activeProjects = (workType: WorkTypes) =>
         <v-container fluid>
           <v-row>
             <v-col
-              v-for="(project, i) in activeProjects(title as WorkTypes)"
+              v-for="(project, i) in activeProjects(title as WorkType)"
               :key="i"
               cols="12"
               md="3"
             >
               <ProjectCard
                 :title="project.title"
-                :imageFolder="`work/${project.title}`"
-                :image="project.image"
+                :imageFolder="`work/${project.urlTitle}`"
+                :image="getProjectImage(project)"
                 @click="
                   () =>
                     router.push({
                       name: Routes.Project,
-                      params: { projectName: project.title }
+                      params: { projectName: project.urlTitle }
                     })
                 "
               />
