@@ -9,7 +9,7 @@ import { projects } from '@/composables/projects'
 import { isMobile } from '@/composables/isMobile'
 
 const props = defineProps({
-  content: { } //Object as PropType<WorkType>, default: WorkType.ALL }
+  content: { Object, default: WorkType.ALL }
 })
 
 const tab = ref(null)
