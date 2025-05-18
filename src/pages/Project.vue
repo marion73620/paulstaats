@@ -26,15 +26,19 @@ const project = computed(() => projects[projectIndex.value])
 const imageRef = ref(null)
 const { width, height } = useElementSize(imageRef)
 
-const flipBookImagesUrl = computed(() =>
-  project.value?.flipbookImages?.map((image: string) =>
-    getImageUrl(image, `work/${project.value.urlTitle}`)
+const flipBookImagesUrl = computed(() => project.value?.flipbookImages?.map((image: string) =>
+      getImageUrl(image, `work/${project.value.urlTitle}`)
   )
 )
 const coverImageUrl = getImageUrl(project.value?.coverImage, `work/${project.value.urlTitle}`)
 
 const videoWidth = isMobile ? window.innerWidth - 40 : 800
 const videoHeight = isMobile ? videoWidth * 0.56 : 450
+
+const setClasses = () => {
+  // Still need the image for the width calculation, but hiding it by setting height to 0
+  return project.value?.flipbookImages ? 'h-0 marginBottom' : 'marginBottom'
+}
 
 onUpdated(() => window.scrollTo(0, 0))
 </script>
@@ -58,8 +62,11 @@ onUpdated(() => window.scrollTo(0, 0))
       </template>
       <template #image>
         <div>
-          <v-row :class="marginBottom"
-            ><v-img ref="imageRef" :src="getImageUrl(project?.image, `work/${project.urlTitle}`)"
+          <v-row v-if="project?.flipbookImages" :class="marginBottom"
+            ><Flipbook :pages="flipBookImagesUrl" :imageHeight="height" :imageWidth="width"
+          /></v-row>
+          <v-row v-if="project?.image" :class="setClasses()"
+            ><v-img ref="imageRef" :src="getImageUrl(project.image, `work/${project.urlTitle}`)"
           /></v-row>
           <v-row v-if="project?.video" :class="marginBottom"
             ><video :width="videoWidth" :height="videoHeight" controls>
@@ -67,9 +74,6 @@ onUpdated(() => window.scrollTo(0, 0))
               Uw browser ondersteunt het video element niet.
             </video></v-row
           >
-          <v-row v-if="project?.flipbookImages" :class="marginBottom"
-            ><Flipbook :pages="flipBookImagesUrl" :imageHeight="height" :imageWidth="width"
-          /></v-row>
         </div>
       </template>
       <template #footer

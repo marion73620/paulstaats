@@ -1,11 +1,23 @@
-export const getImageUrl = (imageName: string | undefined, imageFolder: string = 'work') => {
-  return new URL(`../assets/images/${imageFolder}/${imageName}`, import.meta.url).href
+export const getImageUrl = (imageName: string | undefined, imageFolder: string) => {
+  const imageUrlGlob: Record<string, any> = import.meta.glob('../assets/images/**/*', {
+    eager: true,
+    query: 'url',
+  })
+  return imageUrlGlob[`../assets/images/${imageFolder}/${imageName}`].default
 }
 
-export const getVideoUrl = (imageName: string | undefined) => {
-  return new URL(`../assets/videos/${imageName}`, import.meta.url).href
+export const getVideoUrl = (videoName: string | undefined) => {
+  const imageUrlGlob: Record<string, any> = import.meta.glob('../assets/videos/**/*', {
+    eager: true,
+    query: 'url',
+  })
+  return imageUrlGlob[`../assets/videos/${videoName}`].default
 }
 
-export const getAudioUrl = (imageName: string | undefined) => {
-  return new URL(`../assets/audio/${imageName}`, import.meta.url).href
+export const getAudioUrl = (audioName: string | undefined) => {
+  const imageUrlGlob: Record<string, any> = import.meta.glob('../assets/audio/**/*', {
+    eager: true,
+    query: 'url',
+  })
+  return imageUrlGlob[`../assets/audio/${audioName}`].default
 }

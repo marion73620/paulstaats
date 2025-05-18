@@ -1,6 +1,6 @@
 import { WorkType } from '@/composables/navigation'
 
-type BaseProject = {
+type Project = {
   type: WorkType[]
   urlTitle: string
   title: string
@@ -9,22 +9,11 @@ type BaseProject = {
   link?: string
   linkText?: string
   coverImage: string
+  image?: string
+  flipbookImages?: string[]
   video?: string
   music?: string
 }
-
-type ImageProject = BaseProject & {
-  image: string
-  flipbookImages?: never
-}
-
-type FlipbookProject = BaseProject & {
-  flipbookImages: string[]
-  image?: never
-}
-
-export type Project = ImageProject | FlipbookProject
-
 
 export const projects: Project[] = [
   {
@@ -36,6 +25,7 @@ export const projects: Project[] = [
     link: 'Beeldkwaliteitsplan-De-Beemd.pdf',
     linkText: 'Link naar Beeldkwaliteitsplan De Beemd.',
     coverImage: 'GrootDeBeemt.jpg',
+    image: '1MidDeBeemt.jpg',
     flipbookImages: ['1MidDeBeemt.jpg', '2MidDeBeemt.jpg', '3MidDeBeemt.jpg', '4MidDeBeemt.jpg', '5MidDeBeemt.jpg']
   },
   {
@@ -48,6 +38,7 @@ export const projects: Project[] = [
       '\n\nIn het noordelijk deel van het plangebied komen vier aaneengesloten recreatiewoningen, in de vorm van een kapschuur. De naastgelegen schuur wordt als berging bij de woning betrokken. De bestaande schuur van de oude boerderij is recent hersteld met zoveel mogelijk historische referenties. Deze ruimte gaat tevens dienen voor de opslag van bouw- en schildermateriaal, hobbymatige houtbewerking en voor de stalling van kranen en aanhangwagens. Waarschijnlijk zijn beide schuren ooit bewoond geweest door landarbeiders van het landgoed Huis te Lathum.' +
       '\n\nOm de nieuwbouw te realiseren worden er ecologische maatregelen getroffen. In samenhang ontstaat zo een transformatie van het historische landgoed.',
     coverImage: 'GrootHtL.jpg',
+    image: 'Mid2HtL.jpg',
     flipbookImages: ['Mid2HtL.jpg', 'Mid3HtL.jpg', 'Mid4HtL.jpg', 'MidHtL.jpg']
   },
   {
@@ -57,6 +48,7 @@ export const projects: Project[] = [
     subTitle: 'Provincie Utrecht 2017',
     text: 'In opdracht van de Loendersloot-groep is met Merlijn Kamp een inpassingsstudie verricht voor de doorfietsroute-f28, een nieuwe fietsverbinding tussen Amersfoort en Utrecht. De Provincie Utrecht verkent de mogelijkheden voor een nieuw fietspad met als thema ‘De Stijl’. Tijdens de route van 20 ervaart de fietser hoogteverschillen, zowel landelijk als stedelijk gebied en doorkruist de Hollandse Waterlinie. Uitwerking geschiedt per gemeente; aanleg vanaf 2022.',
     coverImage: 'GrootF28.jpg',
+    image: '1MidF28.jpg',
     flipbookImages: ['1MidF28.jpg', '2MidF28.jpg', '3MidF28.jpg', '1MidF28.jpg']
   },
   {
@@ -68,6 +60,7 @@ export const projects: Project[] = [
       'In opdracht van de Stichting Huis Deelerwoud is een Toekomstvisie voor het landgoed-deelerwoud opgesteld. Het plan is in samenwerking met rentmeester Gerrit Jan Liet en het bureau Econsultancy ontwikkeld en wordt besproken met gemeente Apeldoorn en provincie Gelderland. In het plan voor de komende tien jaar staan de besluiten die cruciaal zijn voor het voortbestaan van het landgoed in zijn huidige vorm en met zijn kernkwaliteiten. Het landgoed bevindt zich in Natura 2000 gebied en het Gelders Natuurnetwerk. Het bijzondere karakter met de rust, natuur- en cultuurhistorische waarden is alleen te behouden door een gewijzigd beheer en als er op strategische plekken ingrepen plaatsvinden. Onder strenge voorwaarden worden aan de randen locaties ontwikkeld voor woningbouw.' +
       '\n\nHet plan is vrijgegeven voor inspraak en moet uiteindelijk leiden tot een algehele bestemmingsplanherziening.',
     coverImage: 'GrootTVDW.jpg',
+    image: '1MidTVDW.jpg',
     flipbookImages: ['1MidTVDW.jpg', '3MidTVDW.jpg', '4MidTVDW.jpg', '2MidTVDW.jpg']
   },
   {
@@ -86,7 +79,7 @@ export const projects: Project[] = [
     subTitle: 'Gemeenten Borne, Doetinchem, Berg en Dal, Nijmegen, Dinkelland. 2013 – heden',
     text: 'Bezitters van een potentiële bouwkavel worden geholpen met een principeverzoek naar de gemeente, een inrichtingsplan, coördinatie van technische onderzoeken en het opstellen van een compleet bestemmingsplan of ruimtelijke onderbouwing.',
     coverImage: 'WensinkZuidGroot.jpg',
-    flipbookImages: ['WensinkZuid1.jpg', 'WensinkZuid2.jpg', 'WensinkZuid3.jpg']
+    image: ''
   },
   {
     type: [WorkType.PLANNING],
@@ -110,7 +103,7 @@ export const projects: Project[] = [
     link: 'Magazine-100-jaar-Dekkerswald.pdf',
     linkText: 'Link naar brochure',
     coverImage: 'Dekkerswaldgroot.jpg',
-    flipbookImages: ['Dekkerswald1.png', 'Dekkerswald2.png', 'Dekkerswald3.png', 'Dekkerswald4.png']
+    image: ''
   },
   {
     type: [WorkType.PLANNING, WorkType.SAME],
@@ -119,7 +112,7 @@ export const projects: Project[] = [
     subTitle: 'Gemeente Enschede 2016',
     text: 'Met het samenwerkingsverband ‘Innovare’ is deelgenomen aan een prijsvraag voor een innovatief pad van het NS-station naar de Universiteit Twente. Met een nieuwe visie voor het Kennispark en meerdere attractiepunten langs het pad werd een nieuw aantrekkelijk beeld geschetst. De visie was gebaseerd op twee hoofdlijnen: “Co-creatie & open innovatie”; door het actief betrekken van innovatieve stakeholders en een ‘Groene draad’. In samenwerking met Krinkels, André Bijkerk, Simon Huiskamp, Jankees Klapwijk en 100% FAT.',
     coverImage: 'Kennisparkgroot.jpg',
-    flipbookImages: ['Kennispark1.jpg', 'Kennispark2.jpg', 'logo-Innovare-1.png']
+    image: ''
   },
   {
     type: [WorkType.PLANNING, WorkType.SAME],
@@ -139,7 +132,7 @@ export const projects: Project[] = [
     link: 'flyer-buzz-150118.pdf',
     linkText: 'Link naar brochure',
     coverImage: 'buzzgroot.jpg',
-    image: 'buzzklein.jpg'
+    image: ''
   },
   {
     type: [WorkType.OUTSIDE],
@@ -148,7 +141,7 @@ export const projects: Project[] = [
     subTitle: 'Diverse gemeenten',
     text: 'Het straatmeubilair kan de bekroning zijn van een herinrichting van de buitenruimte. Zo kreeg de Veerstoep van de IJssel in Dieren-Zuid een nieuwe uitkijkpost over de IJssel. En het kantoor van ZZG-zorggroep op Park Dekkerswald een aangename lunchplek.',
     coverImage: 'Veerstoepgroot.jpg',
-    flipbookImages: ['Veerstoep1.png', 'Veerstoep2.png', 'Veerstoep3.png', 'Veerstoep4.png']
+    image: ''
   },
   {
     type: [WorkType.PLANNING],

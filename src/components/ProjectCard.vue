@@ -9,6 +9,7 @@ defineProps({
   imageFolder: { type: String}, //, required: true },
   title: { type: String, required: true }
 })
+
 </script>
 
 <template>
@@ -16,7 +17,7 @@ defineProps({
     <template v-slot:default="{ isHovering, props }">
       <v-card v-bind="props" class="project-card" @click="$emit('click')">
         <v-card-item>
-          <v-img :src="image ?? getImageUrl(image, imageFolder)"></v-img>
+          <v-img :src="(image && imageFolder) ? getImageUrl(image, imageFolder) : undefined"></v-img>
         </v-card-item>
         <v-card-title>
           {{ title }}
