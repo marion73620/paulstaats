@@ -9,7 +9,7 @@ const currentUrl = `https://paulstaats.com${route.fullPath}`
   <div class="d-flex py-3 mt-3 project-share">
     Delen:<a :href="`mailto:?subject=Website Paul Staats&body=${currentUrl}`">
       <v-icon icon="mdi-email" class="ml-3" /> </a
-    ><a :href="`https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`"
+    ><a target="_blank" :href="`https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`"
       ><v-icon icon="mdi-linkedin" class="ml-3"
     /></a>
     <div class="ml-3" :data-href="currentUrl">
