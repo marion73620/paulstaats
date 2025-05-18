@@ -1,8 +1,8 @@
-@import 'base';
-@import 'project';
-@import 'flipbook';
-@import 'carousel';
-@import 'profile';
+@use 'base';
+@use 'project';
+@use 'flipbook';
+@use 'carousel';
+@use 'profile';
 
 .navigation {
   position: sticky;
