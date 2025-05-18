@@ -10,7 +10,7 @@ import { projects } from '@/composables/projects'
 import { isMobile } from '@/composables/isMobile'
 
 const props = defineProps({
-  content: { type: Object as PropType<WorkType> }
+  content: { type: Object as PropType<WorkType>, default: WorkType.ALL }
 })
 
 const tab = ref(null)
@@ -25,7 +25,7 @@ const activeProjects = (workType: WorkType) =>
       : projects.filter((project: Project) => project.type.includes(workType))
 
 const getProjectImage = (project: Project) => {
-  return project.image ? project.image : project.flipbookImages?.[0] ? project.flipbookImages[0] : ''
+  return project.image ? project.image : project.flipbookImages?.[0] ? project.flipbookImages[0] : ""
 }
 </script>
 

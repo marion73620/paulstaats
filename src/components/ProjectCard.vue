@@ -5,8 +5,8 @@ defineEmits(['click'])
 
 defineProps({
   modelValue: { type: Boolean, default: false },
-  image: { type: String, required: true },
-  imageFolder: { type: String, required: true },
+  image: { type: String }, //, required: true },
+  imageFolder: { type: String}, //, required: true },
   title: { type: String, required: true }
 })
 </script>
@@ -16,7 +16,7 @@ defineProps({
     <template v-slot:default="{ isHovering, props }">
       <v-card v-bind="props" class="project-card" @click="$emit('click')">
         <v-card-item>
-          <v-img :src="getImageUrl(image, imageFolder)"></v-img>
+          <v-img :src="image ?? getImageUrl(image, imageFolder)"></v-img>
         </v-card-item>
         <v-card-title>
           {{ title }}
