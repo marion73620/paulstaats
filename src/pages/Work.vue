@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import { ref } from 'vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import { workNav, WorkType } from '@/composables/navigation'

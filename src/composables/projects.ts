@@ -1,6 +1,6 @@
 import { WorkType } from '@/composables/navigation'
 
-type Project = {
+export type Project = {
   type: WorkType[]
   urlTitle: string
   title: string
