@@ -9,3 +9,21 @@
     position: absolute;
   }
 }
+
+.hand-image {
+  z-index: 9999;
+  position: absolute;
+  transform: rotate(340deg);
+  animation: MoveHand 2s linear infinite;
+}
+
+@keyframes MoveHand {
+  0%, 100% {
+    right: -80px;
+    bottom: 12px;
+  }
+  50% {
+    right: -95px;
+    bottom: 20px;
+  }
+}

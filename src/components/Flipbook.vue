@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { useThemeStore } from '@/stores/themeStore'
+import { useHandStore} from '@/stores/handStore'
 import triangleRightBlack from '@/assets/images/logo/triangle-right-black.svg'
 import triangleRightWhite from '@/assets/images/logo/triangle-right-white.svg'
 import triangleLeftBlack from '@/assets/images/logo/triangle-left-black.svg'
 import triangleLeftWhite from '@/assets/images/logo/triangle-left-white.svg'
+import whiteHand from '@/assets/images/rest/witte-hand.png'
+import blackHand from '@/assets/images/rest/zwarte-hand.png'
 import Flipbook from 'flipbook-vue'
 import { computed, onUpdated, ref } from 'vue'
 import type { PropType } from 'vue'
+import { isMobile } from '@/composables/isMobile'
+import { storeToRefs } from 'pinia'
 
 const props = defineProps({
   pages: { type: Array as PropType<Array<string>>, default: () => [] },
@@ -19,6 +24,8 @@ const currentPage = ref(0)
 const showRightTriangle = ref(true)
 
 const themeStore = useThemeStore()
+const handStore = useHandStore()
+const { dark } = storeToRefs(themeStore)
 const triangle = computed(() => (themeStore.dark ? triangleRightBlack : triangleRightWhite))
 const triangleLeft = computed(() => (themeStore.dark ? triangleLeftBlack : triangleLeftWhite))
 
@@ -38,6 +45,7 @@ onUpdated(() => {
 })
 
 const flipRight = (flipbook: any) => {
+  handStore.hideHand()
   flipbook.flipRight()
   currentPage.value += 1
   if (currentPage.value === props.pages?.length - 1) {
@@ -52,9 +60,13 @@ const flipLeft = (flipbook: any) => {
     showRightTriangle.value = true
   }
 }
+
+const showHand = computed(() => !isMobile && handStore.showHand)
 </script>
 
 <template>
+  <v-img v-if="showHand && dark" :src="whiteHand" width="60px" class="hand-image"></v-img>
+  <v-img v-if="showHand && !dark" :src="blackHand" width="60px" class="hand-image"></v-img>
   <flipbook
     v-if="hasFlipbook"
     class="flipbook"
