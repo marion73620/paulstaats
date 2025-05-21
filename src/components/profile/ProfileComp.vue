@@ -6,6 +6,8 @@ import bandana5 from '@/assets/images/profile/bandana5.jpg'
 import bandana8 from '@/assets/images/profile/bandana8.jpg'
 import bandana9 from '@/assets/images/profile/bandana9.jpg'
 import bandana10 from '@/assets/images/profile/bandana10.jpg'
+import bandana11 from '@/assets/images/profile/bandana11.jpg'
+import bandana12 from '@/assets/images/profile/bandana12.jpg'
 import bandanalara from '@/assets/images/profile/bandanalara.jpeg'
 import bandanakat from '@/assets/images/profile/bandanakat.jpg'
 import Flipbook from '@/components/Flipbook.vue'
@@ -55,6 +57,8 @@ const { width, height } = useElementSize(imageRef)
             bandana8,
             bandana9,
             bandana10,
+            bandana11,
+            bandana12,
             bandanakat
           ]"
           :imageHeight="height"
