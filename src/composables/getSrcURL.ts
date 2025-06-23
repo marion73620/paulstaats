@@ -3,6 +3,8 @@ export const getImageUrl = (imageName: string | undefined, imageFolder: string) 
     eager: true,
     query: 'url',
   })
+  console.log(imageFolder)
+  console.log(imageName)
   return imageUrlGlob[`../assets/images/${imageFolder}/${imageName}`].default
 }
 

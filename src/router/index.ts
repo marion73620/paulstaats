@@ -21,19 +21,16 @@ const router: Router = createRouter({
       component: Home
     },
     {
-      path: '/work/:content?',
+      path: '/work',
       name: Routes.Work,
       component: Work,
-      props: (route: RouteLocation) => ({
-        content: route.params.content
-      })
     },
     {
-      path: '/project/:projectName',
+      path: '/project/:workName',
       name: Routes.Project,
       component: Project,
       props: (route: RouteLocation) => ({
-        projectName: route.params.projectName
+        workName: route.params.workName
       })
     },
     {

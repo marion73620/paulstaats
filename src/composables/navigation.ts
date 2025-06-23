@@ -8,34 +8,41 @@ import ProfileComp from '@/components/profile/ProfileComp.vue'
 
 export type Navigation = {
   title: string | WorkType
+  subtitle?: string
   to?: Routes
   component?: Component
   subNav?: Navigation[]
+  image?: string
+  coverImage?: string
 }
 
 export enum WorkType {
-  ALL = 'ALLES',
-  URBANISM = 'STEDEBOUW',
-  PLANNING = 'PLANOLOGIE',
-  OUTSIDE = 'BUITENRUIMTE',
-  SAME = 'EVENGOED'
+  URBANISM = 'stedebouw',
+  PLANNING = 'planologie',
+  OUTSIDE = 'buitenruimte',
+  SAME = 'evengoed'
 }
 
 export const workNav: Navigation[] = [
-  {
-    title: WorkType.ALL
+ {
+    title: WorkType.URBANISM,
+    image: "MidHtL.jpg",
+    coverImage: "GrootHtL.jpg",
   },
   {
-    title: WorkType.URBANISM
+    title: WorkType.PLANNING,
+    subtitle: "Duurzame visie, vastleggen en planadvies",
+    image: "1MidDeBeemt.jpg",
+    coverImage: 'GrootDeBeemt.jpg',
   },
   {
-    title: WorkType.PLANNING
+    title: WorkType.OUTSIDE,
+    image: "1MidF28.jpg",
+    coverImage: "GrootF28.jpg"
   },
   {
-    title: WorkType.OUTSIDE
-  },
-  {
-    title: WorkType.SAME
+    title: WorkType.SAME,
+    image: "participatie-2.jpg"
   }
 ]
 
