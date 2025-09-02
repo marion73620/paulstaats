@@ -36,6 +36,9 @@ const styleLeftTriangle = ref()
 
 onUpdated(() => {
   if (props.imageWidth > 0) {
+    // Switching page resets currentPage of the Beeldkwaliteitsplan
+    //currentPage.value = 0
+
     const height = props.imageHeight != 0 ? props.imageHeight : props.imageWidth * 0.5622
     hasFlipbook.value = true
     styleFlipbook.value = `height: ${height}px; width: ${props.imageWidth}px`

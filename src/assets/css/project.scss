@@ -3,6 +3,12 @@
   transform: scale(1.1);
 }
 
+.project-card {
+  .v-card-item__content {
+    height: 66vh;
+  }
+}
+
 .project-text {
   white-space: pre-wrap;
 }

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import type { RouteLocation } from 'vue-router'
-import type { Router } from 'vue-router'
+import type { RouteLocation, Router } from 'vue-router'
 import { Routes } from '@/router/routes'
 import Project from '@/pages/Project.vue'
 import Work from '@/pages/Work.vue'
@@ -26,11 +25,11 @@ const router: Router = createRouter({
       component: Work,
     },
     {
-      path: '/project/:workName',
+      path: '/project/:project',
       name: Routes.Project,
       component: Project,
       props: (route: RouteLocation) => ({
-        workName: route.params.workName
+        project: route.params.project
       })
     },
     {

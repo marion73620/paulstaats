@@ -12,27 +12,27 @@ const props = defineProps({
 
 const goToPreviousProject = () => {
   const prevName =
-    props.index === 0 ? projects[projects.length - 1].urlTitle : projects[props.index - 1].urlTitle
-  router.push({ name: Routes.Project, params: { projectName: prevName } })
+    props.index === 0 ? projects[projects.length - 1].title : projects[props.index - 1].title
+  router.push({ name: Routes.Project, params: { workName: prevName } })
 }
 
 const goToNextProject = () => {
   const nextName =
-    props.index === projects.length - 1 ? projects[0].urlTitle : projects[props.index + 1].urlTitle
-  router.push({ name: Routes.Project, params: { projectName: nextName } })
+    props.index === projects.length - 1 ? projects[0].title : projects[props.index + 1].title
+  router.push({ name: Routes.Project, params: { workName: nextName } })
 }
 
-const allProjects = isMobile ? 'Alles' : 'Alle projecten'
+const allProjects = isMobile ? 'Alles' : 'Alle topics'
 </script>
 
 <template>
   <div class="my-5 d-flex justify-space-between project-nav">
     <div class="d-flex cursor" @click="goToPreviousProject">
-      <v-img width="22px" :src="triangleLeftMiddle" class="mr-2" />Vorig project
+      <v-img width="22px" :src="triangleLeftMiddle" class="mr-2" />Vorige topic
     </div>
     <div class="cursor" @click="() => router.push({ name: Routes.Work })">{{ allProjects }}</div>
     <div class="d-flex cursor" @click="goToNextProject">
-      Volgend project<v-img width="22px" :src="triangleRightMiddle" class="ml-2" />
+      Volgende topic<v-img width="22px" :src="triangleRightMiddle" class="ml-2" />
     </div>
   </div>
 </template>

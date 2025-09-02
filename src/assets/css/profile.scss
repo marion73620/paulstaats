@@ -3,3 +3,9 @@
     overflow: visible;
   }
 }
+
+.inspiration {
+  .v-card:hover {
+    cursor: pointer;
+  }
+}

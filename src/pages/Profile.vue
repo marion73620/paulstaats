@@ -5,6 +5,7 @@ import { profileNav } from '@/composables/navigation'
 import contact from '@/assets/images/profile/contactPss.png'
 import bouwers from '@/assets/images/profile/foto stedebouwers.png'
 import weusthag from '@/assets/images/profile/Weusthagstr3-.jpg'
+import boot from '@/assets/images/profile/pss_in_boot.jpg'
 import CoverImage from '@/components/CoverImage.vue'
 import { isMobile } from '@/composables/isMobile'
 
@@ -23,7 +24,7 @@ const getComponent = (component: Component | undefined) => {
 
 <template>
   <div class="profile-page">
-    <CoverImage :images="[contact, bouwers, weusthag]" />
+    <CoverImage :images="[boot, contact, bouwers, weusthag]" />
     <v-container>
       <v-tabs v-if="!isMobile" slider-color="primary" v-model="tab" align-tabs="center" show-arrows>
         <v-tab v-for="({ title }, i) in profileNav" :key="i" :value="i">{{ title }}</v-tab>

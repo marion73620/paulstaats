@@ -30,11 +30,17 @@
   }
 }
 
+//.navigation:hover .logo__image {
+//  top: 0;
+//}
+
 .logo {
   cursor: pointer;
 
   &__image {
     width: 100px;
+    //position: relative;
+    //top: 40px;
   }
 
   &__signature {
