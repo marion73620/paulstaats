@@ -13,7 +13,6 @@ export type Navigation = {
   subNav?: Navigation[]
 }
 
-
 export const profileNav: Navigation[] = [
   {
     title: 'PROFIEL',

@@ -12,7 +12,6 @@ defineProps({
 const height = computed(() => (isMobile ? window.innerHeight / 5 : (window.innerHeight * 2) / 3))
 const titleHeight = computed(() => (isMobile ? '30px' : '90px'))
 const subTitleHeight = computed(() => (isMobile ? '15px' : '30px'))
-
 </script>
 
 <template>
@@ -25,8 +24,7 @@ const subTitleHeight = computed(() => (isMobile ? '15px' : '30px'))
         <h2 v-if="subTitle">
           {{ subTitle }}
         </h2>
-      </v-carousel-item
-      >
+      </v-carousel-item>
     </v-carousel>
   </div>
 </template>

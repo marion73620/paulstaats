@@ -13,13 +13,13 @@ const props = defineProps({
 const goToPreviousProject = () => {
   const prevName =
     props.index === 0 ? projects[projects.length - 1].title : projects[props.index - 1].title
-  router.push({ name: Routes.Project, params: { workName: prevName } })
+  router.push({ name: Routes.Project, params: { project: prevName } })
 }
 
 const goToNextProject = () => {
   const nextName =
     props.index === projects.length - 1 ? projects[0].title : projects[props.index + 1].title
-  router.push({ name: Routes.Project, params: { workName: nextName } })
+  router.push({ name: Routes.Project, params: { project: nextName } })
 }
 
 const allProjects = isMobile ? 'Alles' : 'Alle topics'

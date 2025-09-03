@@ -18,7 +18,8 @@
 }
 
 @keyframes MoveHand {
-  0%, 100% {
+  0%,
+  100% {
     right: -80px;
     bottom: 12px;
   }

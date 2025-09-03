@@ -11,7 +11,6 @@ const cardClicked = (clickedIndex: number): void => {
   imageIndex.value = clickedIndex
   dialog.value = true
 }
-
 </script>
 
 <template>
@@ -21,8 +20,7 @@ const cardClicked = (clickedIndex: number): void => {
         <v-col v-for="(ins, i) in inspirations" :key="i" cols="12" md="4">
           <v-card @click="cardClicked(i)">
             <v-card-item>
-              <v-img :src="getImageUrl(ins, 'inspiration')" >
-              </v-img>
+              <v-img :src="getImageUrl(ins, 'inspiration')"> </v-img>
             </v-card-item>
           </v-card>
         </v-col>

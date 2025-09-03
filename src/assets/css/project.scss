@@ -1,3 +1,10 @@
+.project-page {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-auto-columns: minmax(0, 1fr);
+}
+
 .project-card:hover img {
   transition: transform 1s;
   transform: scale(1.1);

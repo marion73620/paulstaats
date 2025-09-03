@@ -22,7 +22,7 @@ const router: Router = createRouter({
     {
       path: '/work',
       name: Routes.Work,
-      component: Work,
+      component: Work
     },
     {
       path: '/project/:project',

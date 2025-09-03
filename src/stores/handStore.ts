@@ -10,5 +10,5 @@ export const useHandStore = defineStore('hand', {
     hideHand() {
       this.showHand = false
     }
-  },
+  }
 })
