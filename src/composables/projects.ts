@@ -88,7 +88,13 @@ export const projects: Project[] = [
       },
       {
         title: 'Pleinen en routes',
-        images: ['1-Blinkertplein-min.png', '2-Blinkertplein-min.png', '3-Kwinkelier.png', 'brug-1.jpg', 'laan-1.jpg']
+        images: [
+          '1-Blinkertplein-min.png',
+          '2-Blinkertplein-min.png',
+          '3-Kwinkelier.png',
+          'brug-1.jpg',
+          'laan-1.jpg'
+        ]
       },
       {
         title: 'Straatmeubilair',

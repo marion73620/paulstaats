@@ -16,7 +16,7 @@ const props = defineProps({
 const marginFooter = isMobile ? 'mx-2' : 'mt-4'
 
 const projectIndex = computed(() => projects.findIndex((work) => work.title === props.project))
-const project = computed(() =>  projects[projectIndex.value])
+const project = computed(() => projects[projectIndex.value])
 
 const coverImageUrl = computed(() =>
   getImageUrl(project.value?.coverImage, `work/${project.value.title}`)
@@ -68,32 +68,37 @@ const tabSwitched = () => {
     />
     <div v-if="isMobile">
       <v-expansion-panels>
-        <v-expansion-panel
-          v-for="item in project?.subjects"
-          :key="item.title"
-          :title="item.title"
-        ><v-expansion-panel-text >
-          <div class="d-flex justify-center align-center">
-          <v-img
-            width="80vw"
-            :height="imgHeight"
-            ref="imageRef"
-            :src="getImageUrl(item.images[0], `work/${project.title}`)"
-          />
-<!--          <div v-if="showFlipbook(item)">-->
-<!--            <Flipbook :pages="flipBookImages" :imageHeight="height" :imageWidth="width" />-->
-<!--          </div>-->
-          </div>
-        </v-expansion-panel-text></v-expansion-panel>
+        <v-expansion-panel v-for="item in project?.subjects" :key="item.title" :title="item.title"
+          ><v-expansion-panel-text>
+            <div class="d-flex justify-center align-center">
+              <v-img
+                width="80vw"
+                :height="imgHeight"
+                ref="imageRef"
+                :src="getImageUrl(item.images[0], `work/${project.title}`)"
+              />
+              <!--          <div v-if="showFlipbook(item)">-->
+              <!--            <Flipbook :pages="flipBookImages" :imageHeight="height" :imageWidth="width" />-->
+              <!--          </div>-->
+            </div>
+          </v-expansion-panel-text></v-expansion-panel
+        >
       </v-expansion-panels>
     </div>
-      <div v-if="isMobile" class="mx-3">
-        <v-row :class="marginFooter"><Sharing /></v-row>
-        <v-row :class="marginFooter"><ProjectNavigation :index="projectIndex" /></v-row>
-      </div>
+    <div v-if="isMobile" class="mx-3">
+      <v-row :class="marginFooter"><Sharing /></v-row>
+      <v-row :class="marginFooter"><ProjectNavigation :index="projectIndex" /></v-row>
+    </div>
     <v-container v-if="!isMobile">
       <div class="d-flex flex-row justify-space-between">
-        <v-tabs v-model="tab" color="primary" direction="vertical" :hide-slider="true" :mandatory="true" @update:modelValue="tabSwitched">
+        <v-tabs
+          v-model="tab"
+          color="primary"
+          direction="vertical"
+          :hide-slider="true"
+          :mandatory="true"
+          @update:modelValue="tabSwitched"
+        >
           <v-tab v-for="item in project?.subjects" :text="item.title" :value="item.title"></v-tab>
         </v-tabs>
 
@@ -111,9 +116,9 @@ const tabSwitched = () => {
                 ref="imageRef"
                 :src="getImageUrl(item.images[0], `work/${project.title}`)"
               />
-<!--              <div v-if="showFlipbook(item)">-->
-<!--                <Flipbook :pages="flipBookImages" :imageHeight="300" :imageWidth="300" />-->
-<!--              </div>-->
+              <!--              <div v-if="showFlipbook(item)">-->
+              <!--                <Flipbook :pages="flipBookImages" :imageHeight="300" :imageWidth="300" />-->
+              <!--              </div>-->
             </div>
           </v-tabs-window-item>
         </v-tabs-window>
