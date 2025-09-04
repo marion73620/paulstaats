@@ -4,7 +4,7 @@ import { getImageUrl } from '@/composables/getSrcURL'
 
 const dialog = ref(false)
 
-const inspirations = ['wrekers.png', 'dc072e.png', 'BROADWAY_BOOGIE_WOOGIE_Mondrian_1943.png']
+const inspirations = ['wrekers.png', 'BROADWAY_BOOGIE_WOOGIE_Mondrian_1943.png']
 
 const imageIndex = ref(0)
 const cardClicked = (clickedIndex: number): void => {

@@ -30,7 +30,7 @@ export const projects: Project[] = [
           '0-BPVelpNoord.png',
           'Dekkerswald-0615-min.png',
           '0-Dekkerswald-klein-945x490.png',
-          'Kattenburg-Druten-2008.gif'
+          'Kattenburg-Druten-2008.png'
         ]
       },
       {
