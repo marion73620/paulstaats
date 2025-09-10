@@ -24,10 +24,7 @@ const coverImageUrl = computed(() =>
 
 const tab = ref(project?.value.subjects[0].title)
 
-const activeSubject = computed(() => project.value.subjects.find((subj) => subj.title == tab.value))
-
 const showFlipbook = (item: Subject | undefined) => {
-  // console.log(item)
   if (item?.images) {
     return item.images.length > 1
   } else {
@@ -36,26 +33,19 @@ const showFlipbook = (item: Subject | undefined) => {
 }
 
 const imageRef = ref(null)
-const { width, height } = useElementSize(imageRef)
+const { height } = useElementSize(imageRef)
+const flipbookWidth = computed(() => isMobile ? document.documentElement.clientWidth / 1.2 : document.documentElement.clientWidth / 2.5)
 
-// Need the image to get a ref for the Flipbook
-// const imgHeight = computed(() => (showFlipbook(activeSubject.value) ? '0' : ''))
-const imgHeight = ''
-
-const flipBookImages = computed(() =>
-  activeSubject.value?.images?.map((image: string) => {
+const flipBookImages = (item: Subject) => {
+  return item.images?.map((image: string) => {
     return getImageUrl(image, `work/${project.value.title}`)
   })
-)
+}
 
 onUpdated(() => {
-  // Needed when switching to a new project or reload page. Otherwise no tab is selected
+  // Needed when switching to a new project or reload page. Otherwise, no tab is selected
   tab.value = project.value.subjects[0].title
 })
-
-const tabSwitched = () => {
-  // console.log('tabSwitched')
-}
 </script>
 
 <template>
@@ -71,18 +61,20 @@ const tabSwitched = () => {
         <v-expansion-panel v-for="item in project?.subjects" :key="item.title" :title="item.title"
           ><v-expansion-panel-text>
             <div class="d-flex justify-center align-center">
+              <div v-if="showFlipbook(item)" ref="imageRef">
+                <Flipbook
+                  :pages="flipBookImages(item)"
+                  :imageHeight="height"
+                  :imageWidth="flipbookWidth"
+                />
+              </div>
               <v-img
+                v-else
                 width="80vw"
-                :height="imgHeight"
-                ref="imageRef"
                 :src="getImageUrl(item.images[0], `work/${project.title}`)"
               />
-              <!--          <div v-if="showFlipbook(item)">-->
-              <!--            <Flipbook :pages="flipBookImages" :imageHeight="height" :imageWidth="width" />-->
-              <!--          </div>-->
-            </div>
-          </v-expansion-panel-text></v-expansion-panel
-        >
+            </div> </v-expansion-panel-text
+        ></v-expansion-panel>
       </v-expansion-panels>
     </div>
     <div v-if="isMobile" class="mx-3">
@@ -97,7 +89,6 @@ const tabSwitched = () => {
           direction="vertical"
           :hide-slider="true"
           :mandatory="true"
-          @update:modelValue="tabSwitched"
         >
           <v-tab v-for="item in project?.subjects" :text="item.title" :value="item.title"></v-tab>
         </v-tabs>
@@ -109,16 +100,19 @@ const tabSwitched = () => {
             :value="item.title"
           >
             <div class="ml-10" style="height: 400px">
+              <div v-if="showFlipbook(item)" ref="imageRef">
+                <Flipbook
+                  :pages="flipBookImages(item)"
+                  :imageHeight="height"
+                  :imageWidth="flipbookWidth"
+                />
+              </div>
               <v-img
+                v-else
                 width="50vw"
-                :height="imgHeight"
                 max-height="400"
-                ref="imageRef"
                 :src="getImageUrl(item.images[0], `work/${project.title}`)"
               />
-              <!--              <div v-if="showFlipbook(item)">-->
-              <!--                <Flipbook :pages="flipBookImages" :imageHeight="300" :imageWidth="300" />-->
-              <!--              </div>-->
             </div>
           </v-tabs-window-item>
         </v-tabs-window>

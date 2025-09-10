@@ -39,8 +39,8 @@ onUpdated(() => {
     const height = props.imageHeight != 0 ? props.imageHeight : props.imageWidth * 0.5622
     hasFlipbook.value = true
     styleFlipbook.value = `height: ${height}px; width: ${props.imageWidth}px`
-    styleRightTriangle.value = `top: ${height - TRIANGLE_SIZE}px; left: ${props.imageWidth - TRIANGLE_SIZE}px; height: ${TRIANGLE_SIZE}px; width: ${TRIANGLE_SIZE}px`
-    styleLeftTriangle.value = `top: ${height - TRIANGLE_SIZE}px; left: 0px; height: ${TRIANGLE_SIZE}px; width: ${TRIANGLE_SIZE}px`
+    styleRightTriangle.value = `top: ${height - TRIANGLE_SIZE + 1}px; left: ${props.imageWidth - TRIANGLE_SIZE}px; height: ${TRIANGLE_SIZE}px; width: ${TRIANGLE_SIZE}px`
+    styleLeftTriangle.value = `top: ${height - TRIANGLE_SIZE + 1}px; left: 0px; height: ${TRIANGLE_SIZE}px; width: ${TRIANGLE_SIZE}px`
   }
 })
 
