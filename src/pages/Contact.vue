@@ -14,13 +14,13 @@ const bottomMargins = computed(() => (isMobile ? 'mb-4' : ''))
     <div class="d-flex" :class="classes">
       <div :class="bottomMargins">
         <h2 class="mb-2">Bureau</h2>
-        <div>Marten van Rossemstraat 15</div>
-        <div>6821 BA Arnhem</div>
+        <div>Sabastraat 13</div>
+        <div>7556 TH Hengelo (Ov)</div>
       </div>
       <div :class="bottomMargins">
         <h2 class="mb-2">Bezoekadres</h2>
         <div>Weusthagstraat 3</div>
-        <div>7556 ZA Hengelo (O)</div>
+        <div>7556 ZA Hengelo (Ov)</div>
       </div>
       <div :class="bottomMargins">
         <div class="mb-2">
