@@ -33,7 +33,7 @@ const getComponent = (component: Component | undefined) => {
         <v-window-item
           v-for="({ component }, i) in profileNav"
           :key="i"
-          :value="component"
+          :value="i"
           :transition="false"
         >
           <Component :is="getComponent(component)" />
