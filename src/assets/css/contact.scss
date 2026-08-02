@@ -1,0 +1,29 @@
+.contact-grid {
+  display: flex;
+  padding: 0 1.25rem;
+}
+
+.dnr-block {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  max-width: 25%;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    display: block;
+    padding: 0 1rem;
+  }
+
+  .contact-grid > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .dnr-block {
+    margin-left: 0;
+    text-align: left;
+    font-size: 0.92rem;
+  }
+}
