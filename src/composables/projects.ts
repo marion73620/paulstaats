@@ -35,15 +35,15 @@ export const projects: Project[] = [
       },
       {
         title: 'Landgoederen',
-        images: ['1MidTVDW.jpg', 'MidHtL.jpg', 'poort3.jpg']
+        images: ['gebiedsanalyse.jpg', 'ontwikkeling op erven.jpg', 'transformatie landgoederen.jpg', '1MidTVDW.jpg', 'MidHtL.jpg', 'poort3.jpg']
       },
       {
         title: 'Transformatie',
-        images: []
+        images: ['transformatie nieuw plein.jpg', 'Eksterweg irp.jpg', 'bijzonderpanden.jpg']
       },
       {
         title: 'Supervisie',
-        images: []
+        images: ['supervisiebeemt.jpg']
       }
     ],
     subtitle: 'Ruimtelijke analyse, aansprekende vormgeving en begeleiding',
@@ -84,11 +84,13 @@ export const projects: Project[] = [
     subjects: [
       {
         title: 'Beeldkwaliteitsplan',
-        images: ['3-Terwolde-Dorpszicht-profiel-min.png']
+        images: ['lm lathum.jpg', 'BKP Oude Boekeloseweg2.jpg', 'plan Oude Boekeloseweg.jpg', '3-Terwolde-Dorpszicht-profiel-min.png']
       },
       {
         title: 'Pleinen en routes',
         images: [
+          'doorsneden Julianalaan.jpg',
+          'uitsnede plan Julianalaan.jpg',
           '1-Blinkertplein-min.png',
           '2-Blinkertplein-min.png',
           '3-Kwinkelier.png',
@@ -99,6 +101,7 @@ export const projects: Project[] = [
       {
         title: 'Straatmeubilair',
         images: [
+          'buitenwerkplek.jpg',
           'vergaderhuis.jpg',
           '2-buitenruimte-Insula-Dei-Arnhem-2009-min.png',
           '3-buitenruimte-Insula-Dei-Arnhem-2009.png',
@@ -119,7 +122,7 @@ export const projects: Project[] = [
     subjects: [
       {
         title: 'Participatie',
-        images: ['participatie-2.jpg']
+        images: ['ingesprek.jpg', 'plancaravan.jpg', 'participatie-2.jpg']
       },
       {
         title: 'Advies welstand',
