@@ -50,4 +50,8 @@ const height = `${(window.innerHeight * 2) / 3}px
       </v-col>
     </v-row>
   </div>
+  <v-container class="home-text mt-6">
+    <h1>Persoonlijk stedebouwkundig bureau voor opgaves in stad en land,</h1>
+    <h1>veelzijdig door kennis, ervaring en netwerk.</h1>
+  </v-container>
 </template>

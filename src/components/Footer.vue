@@ -19,7 +19,7 @@ const { dark } = storeToRefs(themeStore)
     :height="50"
     app
     class="px-0"
-    @click="() => router.push({ name: Routes.Home })"
+    @click="() => router.push({ name: Routes.Work })"
   >
     <v-img
       class="signature"

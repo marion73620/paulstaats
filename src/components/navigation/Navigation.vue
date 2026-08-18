@@ -14,7 +14,7 @@ const route = useRoute()
     <div class="d-flex align-center px-4">
       <v-tabs
         slider-color="primary"
-        :hide-slider="route.name === Routes.Home || route.name === undefined"
+        :hide-slider="route.name === undefined"
         align-tabs="end"
       >
         <v-tab v-for="({ title, to }, i) in mainNav" :key="i" :to="{ name: to }">{{ title }}</v-tab>
