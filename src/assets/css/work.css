@@ -1,0 +1,22 @@
+.text-reveal-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-text {  
+  animation: slideUp 2.5s ease-out forwards; 
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0; 
+  }
+  50% {
+    opacity: 0.2; 
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1; 
+  }
+}
