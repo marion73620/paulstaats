@@ -10,6 +10,11 @@ const height = `${(window.innerHeight * 2) / 3}px
 </script>
 
 <template>
+   <v-container v-if="isMobile" class="home-text mt-6">
+    <div class="text-reveal-wrapper">
+      <h2 class="reveal-text">Persoonlijk stedebouwkundig bureau voor opgaves in stad en land, veelzijdig door kennis, ervaring en netwerk.</h2>
+    </div>
+  </v-container>
   <div v-if="isMobile">
     <v-container>
       <v-row>
@@ -50,7 +55,7 @@ const height = `${(window.innerHeight * 2) / 3}px
       </v-col>
     </v-row>
   </div>
-  <v-container class="home-text mt-6">
+  <v-container v-if="!isMobile" class="home-text mt-6">
     <div class="text-reveal-wrapper">
       <h2 class="reveal-text">Persoonlijk stedebouwkundig bureau voor opgaves in stad en land, veelzijdig door kennis, ervaring en netwerk.</h2>
     </div>
