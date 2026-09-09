@@ -7,7 +7,6 @@ defineProps({
 })
 defineEmits(['update:modelValue'])
 
-const navTitles = mainNav.map((nav) => nav.title)
 </script>
 
 <template>

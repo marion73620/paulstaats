@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import { isMobile } from '@/composables/isMobile'
 
 defineProps({
-  images: { type: Array as PropType<any[]>, required: true },
+  images: { type: Array as PropType<string[]>, required: true },
   title: { type: String },
   subTitle: { type: String }
 })

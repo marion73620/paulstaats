@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error - vuetify private internal path is not typed
 import colors from 'vuetify/lib/util/colors'
 import '@mdi/font/css/materialdesignicons.css'
 

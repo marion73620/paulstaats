@@ -16,20 +16,20 @@ const props = defineProps({
 const marginFooter = isMobile ? 'mx-2' : 'mt-4'
 
 const projectIndex = computed(() => projects.findIndex((work) => work.title === props.project))
-const project = computed(() => projects[projectIndex.value])
+const projectDetails = computed(() => projects[projectIndex.value])
 
 const coverImageUrl = computed(() =>
-  getImageUrl(project.value?.coverImage, `work/${project.value.title}`)
+  getImageUrl(projectDetails.value?.coverImage, `work/${projectDetails.value.title}`)
 )
 
-const tab = ref(project?.value.subjects[0].title)
+const tab = ref(projectDetails?.value.subjects[0].title)
 
 const showFlipbook = (item: Subject | undefined) => {
   if (item?.images) {
     return item.images.length > 1
-  } else {
-    return false
   }
+
+  return false
 }
 
 const imageRef = ref(null)
@@ -38,13 +38,13 @@ const flipbookWidth = computed(() => isMobile ? document.documentElement.clientW
 
 const flipBookImages = (item: Subject) => {
   return item.images?.map((image: string) => {
-    return getImageUrl(image, `work/${project.value.title}`)
+    return getImageUrl(image, `work/${projectDetails.value.title}`)
   })
 }
 
 onUpdated(() => {
   // Needed when switching to a new project or reload page. Otherwise, no tab is selected
-  tab.value = project.value.subjects[0].title
+  tab.value = projectDetails.value.subjects[0].title
 })
 </script>
 
@@ -52,13 +52,13 @@ onUpdated(() => {
   <div class="project-page">
     <CoverImage
       :images="[coverImageUrl]"
-      :title="project?.title"
-      :subTitle="project?.subtitle"
+      :title="projectDetails?.title"
+      :subTitle="projectDetails?.subtitle"
       :class="isMobile ? 'mb-2' : 'mb-8'"
     />
     <div v-if="isMobile">
       <v-expansion-panels>
-        <v-expansion-panel v-for="item in project?.subjects" :key="item.title" :title="item.title"
+        <v-expansion-panel v-for="item in projectDetails?.subjects" :key="item.title" :title="item.title"
           ><v-expansion-panel-text>
             <div class="d-flex justify-center align-center">
               <div v-if="showFlipbook(item)" ref="imageRef">
@@ -90,12 +90,12 @@ onUpdated(() => {
           :hide-slider="true"
           :mandatory="true"
         >
-          <v-tab v-for="item in project?.subjects" :text="item.title" :value="item.title"></v-tab>
+          <v-tab v-for="item in projectDetails?.subjects" :key="item.title" :text="item.title" :value="item.title"></v-tab>
         </v-tabs>
 
         <v-tabs-window v-model="tab">
           <v-tabs-window-item
-            v-for="item in project?.subjects"
+            v-for="item in projectDetails?.subjects"
             :key="item.title"
             :value="item.title"
           >

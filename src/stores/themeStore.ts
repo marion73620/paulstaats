@@ -10,7 +10,12 @@ export const useThemeStore = defineStore('theme', {
   actions: {
     switch(theme: ThemeInstance) {
       this.dark = !this.dark
-      this.dark ? theme.change('dark') : theme.change('light')
+
+      if (this.dark) {
+        theme.change('dark')
+      } else {
+        theme.change('light')
+      }
     }
   },
   persist: true

@@ -10,7 +10,12 @@ import Footer from '@/components/Footer.vue'
 onMounted(() => {
   const themeStore = useThemeStore()
   const theme = useTheme()
-  themeStore.dark ? theme.change('dark') : theme.change('light')
+
+  if (themeStore.dark) {
+    theme.change('dark')
+  } else {
+    theme.change('light')
+  }
 })
 </script>
 

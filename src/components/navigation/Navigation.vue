@@ -3,7 +3,6 @@ import Logo from '@/components/Logo.vue'
 import ThemeSwitch from '@/components/ThemeSwitch.vue'
 import { mainNav } from '@/composables/navigation'
 import { useRoute } from 'vue-router'
-import { Routes } from '@/router/routes'
 
 const route = useRoute()
 </script>
